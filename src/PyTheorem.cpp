@@ -2,8 +2,6 @@
 #include "raylib.h"
 #include <cmath>
 
-PyTheorem* PyTheorem::instance = nullptr;
-
 PyTheorem::PyTheorem()
 {
     const int screenWidth = 1280;
@@ -15,16 +13,6 @@ PyTheorem::PyTheorem()
 
     pointA = Circle(screenWidth / 2 + 100, screenHeight / 2 + 100, 10, BLUE);
     pointB = Circle(screenWidth / 2 - 100, screenHeight / 2 - 100, 10, RED);
-}
-
-PyTheorem* PyTheorem::GetInstance()
-{
-    if (instance == nullptr)
-    {
-        instance = new PyTheorem();
-    }
-
-    return instance;
 }
 
 void PyTheorem::Update()
@@ -72,9 +60,4 @@ void PyTheorem::Draw()
     pointB.Draw();
 
     EndDrawing();
-}
-
-PyTheorem::~PyTheorem()
-{
-    delete instance;
 }

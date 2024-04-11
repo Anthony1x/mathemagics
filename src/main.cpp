@@ -3,12 +3,12 @@
 
 int main(void)
 {
-    PyTheorem* game=PyTheorem::GetInstance();
+    PyTheorem game = PyTheorem();
 
     while (!WindowShouldClose())
     {
-        game->Update();
-        game->Draw();
+        game.Update();
+        game.Draw();
     }
 
     CloseWindow();
